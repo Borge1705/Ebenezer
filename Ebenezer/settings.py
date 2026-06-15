@@ -126,9 +126,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-STATICFILES_DIRS = [
-    BASE_DIR /"static" /"sistema"/ "css"
-]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 LOGIN_URL = '/'
 LOGIN_REDIRECT_URL = '/dashboard/'
