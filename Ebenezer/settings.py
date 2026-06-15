@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+import os
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -79,14 +82,9 @@ WSGI_APPLICATION = 'Ebenezer.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Ebenezer',
-        'USER': 'postgres',
-        'PASSWORD': 'vale12345',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    "default": dj_database_url.config(
+        default=os.getenv("postgresql://ebenezerdb_user:wuMHmMR2XmY7m3yTiOHr0rRlGaef4pym@dpg-d8nncdbbc2fs73f7p690-a/ebenezerdb")
+    )
 }
 
 
