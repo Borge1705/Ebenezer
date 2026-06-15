@@ -83,10 +83,21 @@ WSGI_APPLICATION = 'Ebenezer.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.config(
-        default=os.getenv("postgresql://ebenezerdb_user:wuMHmMR2XmY7m3yTiOHr0rRlGaef4pym@dpg-d8nncdbbc2fs73f7p690-a/ebenezerdb")
+    'default': dj_database_url.config(
+        default=os.environ.get('postgresql://ebenezerdb_user:wuMHmMR2XmY7m3yTiOHr0rRlGaef4pym@dpg-d8nncdbbc2fs73f7p690-a/ebenezerdb')
     )
 }
+
+#DATABASES = {
+ #   "default": {
+  #      "ENGINE": "django.db.backends.postgresql",
+   #     "NAME": "ebenezerdb",
+    #    "USER": "ebenezerdb_user",
+ #       "PASSWORD": "wuMHmMR2XmY7m3yTiOHr0rRlGaef4pym",
+  #      "HOST": "dpg-d8nncdbbc2fs73f7p690-a.oregon-postgres.render.com",
+   #     "PORT": "5432",
+   # }
+#}
 
 
 # Password validation

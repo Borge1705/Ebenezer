@@ -1,0 +1,772 @@
+[
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add accesorio",
+        "content_type": 7,
+        "codename": "add_accesorio"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change accesorio",
+        "content_type": 7,
+        "codename": "change_accesorio"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete accesorio",
+        "content_type": 7,
+        "codename": "delete_accesorio"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view accesorio",
+        "content_type": 7,
+        "codename": "view_accesorio"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add cliente",
+        "content_type": 8,
+        "codename": "add_cliente"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change cliente",
+        "content_type": 8,
+        "codename": "change_cliente"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete cliente",
+        "content_type": 8,
+        "codename": "delete_cliente"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view cliente",
+        "content_type": 8,
+        "codename": "view_cliente"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add telefono",
+        "content_type": 9,
+        "codename": "add_telefono"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change telefono",
+        "content_type": 9,
+        "codename": "change_telefono"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete telefono",
+        "content_type": 9,
+        "codename": "delete_telefono"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view telefono",
+        "content_type": 9,
+        "codename": "view_telefono"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add reparacion",
+        "content_type": 10,
+        "codename": "add_reparacion"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change reparacion",
+        "content_type": 10,
+        "codename": "change_reparacion"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete reparacion",
+        "content_type": 10,
+        "codename": "delete_reparacion"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view reparacion",
+        "content_type": 10,
+        "codename": "view_reparacion"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add venta",
+        "content_type": 11,
+        "codename": "add_venta"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change venta",
+        "content_type": 11,
+        "codename": "change_venta"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete venta",
+        "content_type": 11,
+        "codename": "delete_venta"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view venta",
+        "content_type": 11,
+        "codename": "view_venta"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add detalle venta",
+        "content_type": 12,
+        "codename": "add_detalleventa"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change detalle venta",
+        "content_type": 12,
+        "codename": "change_detalleventa"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete detalle venta",
+        "content_type": 12,
+        "codename": "delete_detalleventa"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view detalle venta",
+        "content_type": 12,
+        "codename": "view_detalleventa"
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+        "name": "Administrador",
+        "permissions": []
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+        "name": "Tecnico",
+        "permissions": []
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 3,
+    "fields": {
+        "name": "Vendedores",
+        "permissions": [
+            37,
+            38,
+            40,
+            41,
+            42,
+            44
+        ]
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$00esN2gIFuGbRIJKa2KnX2$m0xNrNP/cisS2qCkXvp3bfnnscZlvvS+vfurCHkS0DI=",
+        "last_login": "2026-06-14T01:59:20.245Z",
+        "is_superuser": true,
+        "username": "Admin1",
+        "first_name": "",
+        "last_name": "",
+        "email": "melinalopezmendez5@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-05-02T19:11:31.323Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$TiaFmQPmB5d2kZFA7jP81C$/ytJ3+YJ3EWQag+2w30c9Hgsrx0svpBtZXN2P2TbUvo=",
+        "last_login": "2026-06-14T01:43:11.957Z",
+        "is_superuser": false,
+        "username": "tecnico1",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-06-09T02:41:12.885Z",
+        "groups": [
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$raA7iix7kbZEcQPahdnsRE$22cjc5AsuCEWo10XtpA+6sPtVN1b4s661kJboiAtar0=",
+        "last_login": "2026-06-14T01:45:41.241Z",
+        "is_superuser": false,
+        "username": "vendedor1",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-06-13T22:27:15.229Z",
+        "groups": [
+            3
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "sistema",
+        "model": "accesorio"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "sistema",
+        "model": "cliente"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "sistema",
+        "model": "telefono"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "sistema",
+        "model": "reparacion"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "sistema",
+        "model": "venta"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "sistema",
+        "model": "detalleventa"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "7huy0aez7xqb0cx2v9nkxoimwarmwfgd",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQAP9lz4bwWErp0bvfQLYLSNVAUtqT8d9Nkx70OjOZNwTatxL2ntawRJhAweWXzcTPVA8RH1TvTXCr27rM4kjEabu4tZhe17P9GxTqBSawmcacMGqdkdkZj2Ni6c3gvFXRKpKanWMkMsxaJlKZOQ9KSY9opYbPF-19N8I:1wKSJ8:eIQq-cK4ov2EzwBsM9vWNzYvdfWIBbP6-hTavyl95CU",
+        "expire_date": "2026-05-20T02:48:18.835Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "7upizreezi2ri4nrk0xkr57gf4u00i96",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQAP-yZ0OAuhR69N43kGUBqRpISnsy_t006UGvM5N5g6d9K37vafVLhAk0XH5ZIH6meoj4oHpvglvd1iWIIxGn7WJuMb1uZ_s3KNQLTJBGZLIUpMpXDElJZM2Ddg6tdBiQDUudHTE5JpQpuzEbnY2VKhqdB_h8Aez-OAM:1wY5xw:X08sliScOvf8kTmUXWihlrOEfjb4_hQ9mbpSMyLZAuI",
+        "expire_date": "2026-06-26T17:46:48.427Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "gljl1l9g5px6mi0vfthl6s624qq124fc",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQAP9lz4bwWErp0bvfQLYLSNVAUtqT8d9Nkx70OjOZNwTatxL2ntawRJhAweWXzcTPVA8RH1TvTXCr27rM4kjEabu4tZhe17P9GxTqBSawmcacMGqdkdkZj2Ni6c3gvFXRKpKanWMkMsxaJlKZOQ9KSY9opYbPF-19N8I:1wOnKt:zcReiqgbGPx0l5Ie8yZ9AKq9FThNjlrcZ_LsRqtuNFM",
+        "expire_date": "2026-06-01T02:04:03.222Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "s2ytmaolzib7zksuv4lgstf8c971vx50",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQAP9lz4bwWErp0bvfQLYLSNVAUtqT8d9Nkx70OjOZNwTatxL2ntawRJhAweWXzcTPVA8RH1TvTXCr27rM4kjEabu4tZhe17P9GxTqBSawmcacMGqdkdkZj2Ni6c3gvFXRKpKanWMkMsxaJlKZOQ9KSY9opYbPF-19N8I:1wMZ4X:MH86btZ2ottf-Jt_m1zYaAesbXqMRQuaAEg70QzUQ9s",
+        "expire_date": "2026-05-25T22:25:57.493Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "x8x9cxebfh1mddlqcnetk6seaus0l1ha",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQAP9lz4bwWErp0bvfQLYLSNVAUtqT8d9Nkx70OjOZNwTatxL2ntawRJhAweWXzcTPVA8RH1TvTXCr27rM4kjEabu4tZhe17P9GxTqBSawmcacMGqdkdkZj2Ni6c3gvFXRKpKanWMkMsxaJlKZOQ9KSY9opYbPF-19N8I:1wYa88:sf9ckmh1zOh74DiZBsoAYKjfF30W3NUi8R9KmnWFkOk",
+        "expire_date": "2026-06-28T01:59:20.258Z"
+    }
+},
+{
+    "model": "sistema.telefono",
+    "pk": 9,
+    "fields": {
+        "marca": "SAMSUNG",
+        "modelo": "A56",
+        "precio": "400.00",
+        "stock": 9,
+        "imagen": "",
+        "estado": "Disponible"
+    }
+},
+{
+    "model": "sistema.telefono",
+    "pk": 10,
+    "fields": {
+        "marca": "Xiaomi",
+        "modelo": "Redmi note 13",
+        "precio": "250.00",
+        "stock": 3,
+        "imagen": "telefonos/redmi_note_13.jpg",
+        "estado": "Disponible"
+    }
+},
+{
+    "model": "sistema.cliente",
+    "pk": 2,
+    "fields": {
+        "nombre": "Melina",
+        "telefono": "85854119",
+        "email": "melinalopezmendez@gmail.com",
+        "direccion": ""
+    }
+},
+{
+    "model": "sistema.reparacion",
+    "pk": 1,
+    "fields": {
+        "cliente": 2,
+        "fecha": "2026-06-11T04:00:31.663Z",
+        "estado": "En proceso",
+        "marca": "Xiaomi",
+        "modelo": "Redmi Note 8",
+        "serie": "Unica",
+        "accesorios_recibidos": "funda rosada",
+        "defecto_cliente": "No enciende solo conectado",
+        "notas": "Telefono en buen estado",
+        "informacion_taller": "Compra hace tres a±os",
+        "caracteristicas": "modelo peque±o sin golpes\r\n\r\n\r\n",
+        "razon_visita": "El cliente presenta quejas acerca del equipo por el proceso de encendido\r\n\r\n",
+        "observaciones": "Telefono en buen estado fisicamente pero la falla persiste\r\n\r\n\r\n",
+        "diagnostico": "BaterÝa colapsada por sobrecalentar el sistema\r\n\r\n\r\n",
+        "proceso_realizado": "Valoraci¾n y retiro de la capa \r\n\r\n\r\n",
+        "cotizacion_servicio": "Valoraci¾n y retiro de la capa \r\n\r\n\r\n",
+        "precio_cotizacion": "250.00",
+        "tecnico": 2
+    }
+},
+{
+    "model": "sistema.venta",
+    "pk": 3,
+    "fields": {
+        "cliente": 2,
+        "total": "60.00",
+        "fecha_venta": "2026-06-12",
+        "usuario": null
+    }
+},
+{
+    "model": "sistema.venta",
+    "pk": 4,
+    "fields": {
+        "cliente": 2,
+        "total": "400.00",
+        "fecha_venta": "2026-06-13",
+        "usuario": 3
+    }
+},
+{
+    "model": "sistema.detalleventa",
+    "pk": 1,
+    "fields": {
+        "venta": 3,
+        "producto": "Funda silicona Iphone",
+        "tipo_producto": "Accesorio",
+        "cantidad": 3,
+        "precio_unitario": "20.00",
+        "subtotal": "60.00"
+    }
+},
+{
+    "model": "sistema.detalleventa",
+    "pk": 2,
+    "fields": {
+        "venta": 4,
+        "producto": "SAMSUNG A56",
+        "tipo_producto": "Telefono",
+        "cantidad": 1,
+        "precio_unitario": "400.00",
+        "subtotal": "400.00"
+    }
+},
+{
+    "model": "sistema.accesorio",
+    "pk": 5,
+    "fields": {
+        "nombre": "Funda silicona Iphone",
+        "tipo": "Funda",
+        "precio": "20.00",
+        "stock": 6,
+        "imagen": ""
+    }
+}
+]
