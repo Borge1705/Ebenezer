@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBENEZER</title>
+
+    <link rel="stylesheet" href="{% static 'sistema/css/style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'sistema/js/app.js' %}"></script>
+
+
+</head>
+<body>
+
+<div class="app-container">
+
+      <!-- SIDEBAR -->
+    <div class="sidebar">
+
+        <div class="sidebar-header">
+            <img src="{% static 'sistema/img/logo.jpeg' %}" class="sidebar-logo">
+
+            <div class="sidebar-logo-text">
+                <h2>EBENEZER</h2>
+                <p>Reparaciones y Accesorios</p>
+            </div>
+        </div>
+
+        <div class="nav-menu">
+
+
+        {% if request.user.groups.first.name == 'Tecnico' %}
+
+        <a href="{% url 'dashboard_tecnico' %}" class="nav-item">
+                <span class="nav-icon">📱</span>
+                <span class="nav-text">Menú General</span>
+        </a>
+
+
+        <a href="{% url 'ordenes_tecnico' %}" class="nav-item">
+
+            <span class="nav-icon">📋</span>
+
+            <span class="nav-text">
+            Ordenes
+            </span>
+
+        </a>
+
+        
+        {% elif request.user.groups.first.name == 'Vendedores' %}
+
+            <!-- MENU VENDEDOR -->
+            <a href="{% url 'dashboard_vendedor' %}" class="nav-item">
+
+                <span class="nav-icon">📱</span>
+                <span class="nav-text">
+                    Menú General
+                </span>
+
+            </a>
+
+            <a href="{% url 'ventas' %}" class="nav-item">
+
+                <span class="nav-icon">💰</span>
+
+                <span class="nav-text">
+                    Ventas
+                </span>
+
+            </a>
+
+            <a href="{% url 'generar_orden' %}" class="nav-item">
+
+                <span class="nav-icon">📋</span>
+
+                <span class="nav-text">
+                    Generar Orden
+                </span>
+
+            </a>
+
+
+            <a href="{% url 'reparaciones' %}" class="nav-item">
+
+                <span class="nav-icon">🔧</span>
+
+                <span class="nav-text">
+                    Reparaciones
+                </span>
+
+            </a>
+
+            
+
+        {% else %}
+
+             <a href="{% url 'dashboard' %}" class="nav-item">
+                <span class="nav-icon">📱</span>
+                <span class="nav-text">Menú General</span>
+            </a>
+
+
+            <a href="{% url 'inventario' %}" class="nav-item">
+                <span class="nav-icon">📱</span>
+                <span class="nav-text">Inventario</span>
+            </a>
+
+            <a href="{% url 'accesorios' %}" class="nav-item">
+                <span class="nav-icon">🎧</span>
+                <span class="nav-text">Accesorios</span>
+            </a>
+
+            <a href="{% url 'clientes' %}" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span class="nav-text">Clientes</span>
+            </a>
+
+            <a href="{% url 'generar_orden' %}" class="nav-item">
+                <span class="nav-icon">📋</span>
+                <span class="nav-text">Generar Orden</span>
+            </a>
+
+            <a href="{% url 'reparaciones' %}" class="nav-item">
+                <span class="nav-icon">🔧</span>
+                <span class="nav-text">Reparaciones</span>
+            </a>
+
+            <a href="{% url 'ventas' %}" class="nav-item">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">Ventas</span>
+            </a>
+
+            <a href="{% url 'reportes' %}" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span>Reportes</span>
+            </a>
+
+        {% endif %}
+
+
+        </div>
+   </div>
+
+    <!-- MAIN -->
+    <div class="main-content">
+
+        <div class="top-header">
+            <div class="page-title">
+                {% block title %}{% endblock %}
+            </div>
+
+            <div class="user-info">
+                <span class="user-name">{{ request.user.username }}</span>
+
+                <a href="{% url 'logout' %}">
+                    <button class="logout-btn">Cerrar Sesión</button>
+                </a>
+            </div>
+        </div>
+
+    
+        {% block content %}
+        {% endblock %}
+
+           </div>
+
+</div>
+
+</body>
+</html>

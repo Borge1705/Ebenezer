@@ -1,0 +1,87 @@
+{% extends 'sistema/base.html' %}
+
+
+{% block title %}
+Generar Orden
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="content-panel">
+
+
+<h2>
+Orden de Servicio
+</h2>
+
+
+
+<form method="POST" class="form-modern">
+    {% csrf_token %}
+
+    <div class="form-grid">
+
+        <div class="form-group">
+            <label>👤 Cliente</label>
+            <select name="cliente">
+                {% for c in clientes %}
+                <option value="{{c.id}}">{{c.nombre}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>📱 Equipo</label>
+            <input type="text" name="tipo_equipo" placeholder="Ej: Celular, Laptop, Tablet">
+        </div>
+
+        <div class="form-group">
+            <label>🏷️ Marca</label>
+            <input name="marca" placeholder="Ej: Samsung, Apple">
+        </div>
+
+        <div class="form-group">
+            <label>⚙️ Modelo</label>
+            <input name="modelo" placeholder="Ej: A54, iPhone 13">
+        </div>
+
+        <div class="form-group">
+            <label>🔢 Serie / IMEI</label>
+            <input name="serie" placeholder="Número de serie o IMEI">
+        </div>
+
+        <div class="form-group full">
+            <label>🎒 Accesorios recibidos</label>
+            <textarea name="accesorios" placeholder="Ej: Cargador, caja, audífonos"></textarea>
+        </div>
+
+        <div class="form-group full">
+            <label>❗ Defecto según cliente</label>
+            <textarea name="defecto"></textarea>
+        </div>
+
+        <div class="form-group full">
+            <label>📝 Notas</label>
+            <textarea name="notas"></textarea>
+        </div>
+
+        <div class="form-group full">
+            <label>🛠️ Información para taller</label>
+            <textarea name="taller"></textarea>
+        </div>
+
+    </div>
+
+    <button class="btn-save-modern">
+        💾 Guardar Orden
+    </button>
+
+</form>
+
+</div>
+
+
+{% endblock %}

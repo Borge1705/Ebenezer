@@ -1,0 +1,16 @@
+[
+{
+    "model": "auth.group",
+    "fields": {
+        "name": "Administrador",
+        "permissions": []
+    }
+},
+{
+    "model": "auth.group",
+    "fields": {
+        "name": "Tecnico",
+        "permissions": []
+    }
+}
+]

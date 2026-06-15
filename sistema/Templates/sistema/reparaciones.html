@@ -1,0 +1,76 @@
+{% extends 'sistema/base.html' %}
+
+{% block title %}
+Reparaciones
+{% endblock %}
+
+{% block content %}
+
+<div class="content-panel reparaciones-panel">
+
+    <div class="panel-header">
+        <h2>🛠️ Reparaciones</h2>
+    </div>
+
+    <div class="table-wrapper">
+
+        <table class="tabla-modern">
+
+            <thead>
+                <tr>
+                    <th>👤 Cliente</th>
+                    <th>📱 Equipo</th>
+                    <th>❗ Problema</th>
+                    <th>📌 Estado</th>
+                    <th>📅 Fecha</th>
+                    <th>👁 Acción</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for r in reparaciones %}
+
+                <tr>
+
+                    <td>{{ r.cliente }}</td>
+
+                    <td>{{ r.modelo }}</td>
+
+                    <td>{{ r.defecto_cliente }}</td>
+
+                    <td>
+                        <span class="estado estado-{{ r.estado|lower }}">
+                            {{ r.estado }}
+                        </span>
+                    </td>
+
+                    <td>{{ r.fecha|date:"d/m/Y" }}</td>
+
+                    <td>
+                        <a class="btn-ver" href="{% url 'detalle_orden' r.id %}">
+                            👁 Ver
+                        </a>
+                    </td>
+
+                </tr>
+
+                {% empty %}
+
+                <tr>
+                    <td colspan="6" class="empty-state">
+                        No hay reparaciones registradas
+                    </td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

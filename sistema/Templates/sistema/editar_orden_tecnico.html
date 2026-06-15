@@ -1,0 +1,103 @@
+{% extends 'sistema/base.html' %}
+
+
+{% block title %}
+Completar Orden
+{% endblock %}
+
+
+
+{% block content %}
+<div class="content-panel orden-completar">
+
+    <h2 class="orden-title">
+        🧾 ORDEN DE SERVICIO TÉCNICO #{{ reparacion.id }}
+    </h2>
+
+    <!-- ================= CLIENTE ================= -->
+    <h3>👤 Datos del cliente</h3>
+
+    <div class="info-grid">
+
+        <div class="info-item">
+            👤 <strong>Cliente:</strong> {{ reparacion.cliente.nombre }}
+        </div>
+
+        <div class="info-item">
+            📞 <strong>Teléfono:</strong> {{ reparacion.cliente.telefono }}
+        </div>
+
+    </div>
+
+    <!-- ================= EQUIPO ================= -->
+    <h3>📱 Datos del equipo recibido</h3>
+
+    <div class="info-grid">
+
+        <div class="info-item">
+            🏷️ <strong>Marca:</strong> {{ reparacion.marca }}
+        </div>
+
+        <div class="info-item">
+            ⚙️ <strong>Modelo:</strong> {{ reparacion.modelo }}
+        </div>
+
+        <div class="info-item full">
+            🔢 <strong>Serie / IMEI:</strong> {{ reparacion.serie }}
+        </div>
+
+    </div>
+
+    <!-- ================= FORM ================= -->
+    <form method="POST" class="form-modern">
+        {% csrf_token %}
+
+        <h3>🧠 Evaluación del técnico</h3>
+
+        <div class="form-grid">
+
+            <div class="form-group full">
+                <label>⚙️ Características del equipo</label>
+                <textarea name="caracteristicas">{{ reparacion.caracteristicas }}</textarea>
+            </div>
+
+            <div class="form-group full">
+                <label>❗ Razón de visita</label>
+                <textarea name="razon_visita">{{ reparacion.razon_visita }}</textarea>
+            </div>
+
+            <div class="form-group full">
+                <label>📝 Observaciones</label>
+                <textarea name="observaciones">{{ reparacion.observaciones }}</textarea>
+            </div>
+
+            <div class="form-group full">
+                <label>🧑‍🔧 Diagnóstico del técnico</label>
+                <textarea name="diagnostico">{{ reparacion.diagnostico }}</textarea>
+            </div>
+
+            <div class="form-group full">
+                <label>🔧 Proceso realizado</label>
+                <textarea name="proceso_realizado">{{ reparacion.proceso_realizado }}</textarea>
+            </div>
+
+            <div class="form-group full">
+                <label>📌 Estado</label>
+                <select name="estado">
+                    <option>Pendiente</option>
+                    <option>En proceso</option>
+                    <option>Completado</option>
+                    <option>Entregado</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button class="btn-save-modern">
+            💾 Guardar reparación
+        </button>
+
+    </form>
+
+</div>
+{% endblock %}

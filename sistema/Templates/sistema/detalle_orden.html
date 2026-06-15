@@ -1,0 +1,203 @@
+{% extends 'sistema/base.html' %}
+
+
+{% block title %}
+Orden Técnica
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="content-panel orden-detalle">
+
+    <h2 class="orden-titulo">🧾 ORDEN DE SERVICIO TÉCNICO</h2>
+
+    <!-- ================= CLIENTE ================= -->
+    <div class="info-section">
+        <h3>👤 Datos del cliente</h3>
+
+        <div class="info-grid">
+            <div class="info-item">👤 <strong>Cliente:</strong> {{ reparacion.cliente.nombre }}</div>
+            <div class="info-item">📞 <strong>Teléfono:</strong> {{ reparacion.cliente.telefono }}</div>
+        </div>
+    </div>
+
+    <!-- ================= EQUIPO ================= -->
+    <div class="info-section">
+        <h3>📱 Datos del equipo</h3>
+
+        <div class="info-grid">
+            <div class="info-item">🏷️ <strong>Equipo:</strong> {{ reparacion.marca }} {{ reparacion.modelo }}</div>
+            <div class="info-item">📅 <strong>Fecha:</strong> {{ reparacion.fecha }}</div>
+        </div>
+    </div>
+
+    <!-- ================= DETALLES ================= -->
+    <div class="info-section">
+        <h3>⚙️ Características del equipo</h3>
+        <p class="info-box">{{ reparacion.caracteristicas }}</p>
+    </div>
+
+    <div class="info-section">
+        <h3>❗ Razón de visita</h3>
+        <p class="info-box">{{ reparacion.razon_visita }}</p>
+    </div>
+
+    <div class="info-section">
+        <h3>📝 Observaciones</h3>
+        <p class="info-box">{{ reparacion.observaciones }}</p>
+    </div>
+
+    <div class="info-section">
+        <h3>🧑‍🔧 Diagnóstico del técnico</h3>
+        <p class="info-box">{{ reparacion.diagnostico }}</p>
+    </div>
+
+    <div class="info-section">
+        <h3>🔧 Proceso realizado</h3>
+        <p class="info-box">{{ reparacion.proceso_realizado }}</p>
+    </div>
+
+    <div class="estado-badge">
+        Estado: <span>{{ reparacion.estado }}</span>
+    </div>
+
+    <!-- ================= COTIZACIÓN ================= -->
+    {% if reparacion.precio_cotizacion %}
+    <div class="cotizacion-card">
+
+        <h2>💰 Cotización del servicio</h2>
+
+        <p><strong>🛠️ Servicio a realizar:</strong></p>
+        <p class="info-box">{{ reparacion.cotizacion_servicio }}</p>
+
+        <p class="precio-total">
+            💵 Total: ${{ reparacion.precio_cotizacion }}
+        </p>
+
+    </div>
+    {% endif %}
+
+    <!-- ================= BOTONES ================= -->
+    {% if request.user.groups.first.name == 'Tecnico' %}
+
+    <div class="acciones-orden">
+
+        <button class="btn-cotizar" onclick="abrirCotizacion()">
+            💵 Cotización
+        </button>
+
+        <a href="{% url 'editar_orden_tecnico' reparacion.id %}" class="btn-proceso">
+            🔧 Completar reparación
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+
+
+
+
+<!-- =========================
+     MODAL COTIZACION
+========================= -->
+
+
+<div id="modalCotizacion" class="modal">
+
+
+<div class="modal-content">
+
+
+
+<span 
+class="close"
+onclick="cerrarCotizacion()">
+
+&times;
+
+</span>
+
+
+
+
+<h2>
+Factura de Cotización
+</h2>
+
+
+
+
+<form method="POST">
+
+
+{% csrf_token %}
+
+
+
+
+<div class="form-group">
+
+
+<label>
+Servicio a realizar
+</label>
+
+
+<textarea 
+name="cotizacion_servicio"
+class="form-control">{{ reparacion.proceso_realizado }}</textarea>
+
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+Precio
+</label>
+
+
+<input 
+type="number"
+step="0.01"
+name="precio_cotizacion"
+value="{{ reparacion.precio_cotizacion }}"
+class="form-control">
+
+
+</div>
+
+
+
+
+
+<button 
+type="submit"
+class="btn-save">
+
+Guardar Cotización
+
+</button>
+
+
+
+</form>
+
+
+
+</div>
+
+</div>
+
+
+{% endblock %}

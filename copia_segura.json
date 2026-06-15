@@ -1,0 +1,270 @@
+[
+{
+    "model": "auth.group",
+    "fields": {
+        "name": "Administrador",
+        "permissions": []
+    }
+},
+{
+    "model": "auth.group",
+    "fields": {
+        "name": "Tecnico",
+        "permissions": []
+    }
+},
+{
+    "model": "auth.group",
+    "fields": {
+        "name": "Vendedores",
+        "permissions": [
+            [
+                "add_reparacion",
+                "sistema",
+                "reparacion"
+            ],
+            [
+                "change_reparacion",
+                "sistema",
+                "reparacion"
+            ],
+            [
+                "view_reparacion",
+                "sistema",
+                "reparacion"
+            ],
+            [
+                "add_venta",
+                "sistema",
+                "venta"
+            ],
+            [
+                "change_venta",
+                "sistema",
+                "venta"
+            ],
+            [
+                "view_venta",
+                "sistema",
+                "venta"
+            ]
+        ]
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$00esN2gIFuGbRIJKa2KnX2$m0xNrNP/cisS2qCkXvp3bfnnscZlvvS+vfurCHkS0DI=",
+        "last_login": "2026-06-14T01:59:20.245Z",
+        "is_superuser": true,
+        "username": "Admin1",
+        "first_name": "",
+        "last_name": "",
+        "email": "melinalopezmendez5@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-05-02T19:11:31.323Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$TiaFmQPmB5d2kZFA7jP81C$/ytJ3+YJ3EWQag+2w30c9Hgsrx0svpBtZXN2P2TbUvo=",
+        "last_login": "2026-06-14T01:43:11.957Z",
+        "is_superuser": false,
+        "username": "tecnico1",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-06-09T02:41:12.885Z",
+        "groups": [
+            [
+                "Tecnico"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$raA7iix7kbZEcQPahdnsRE$22cjc5AsuCEWo10XtpA+6sPtVN1b4s661kJboiAtar0=",
+        "last_login": "2026-06-14T01:45:41.241Z",
+        "is_superuser": false,
+        "username": "vendedor1",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-06-13T22:27:15.229Z",
+        "groups": [
+            [
+                "Vendedores"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "7huy0aez7xqb0cx2v9nkxoimwarmwfgd",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQAP9lz4bwWErp0bvfQLYLSNVAUtqT8d9Nkx70OjOZNwTatxL2ntawRJhAweWXzcTPVA8RH1TvTXCr27rM4kjEabu4tZhe17P9GxTqBSawmcacMGqdkdkZj2Ni6c3gvFXRKpKanWMkMsxaJlKZOQ9KSY9opYbPF-19N8I:1wKSJ8:eIQq-cK4ov2EzwBsM9vWNzYvdfWIBbP6-hTavyl95CU",
+        "expire_date": "2026-05-20T02:48:18.835Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "7upizreezi2ri4nrk0xkr57gf4u00i96",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQAP-yZ0OAuhR69N43kGUBqRpISnsy_t006UGvM5N5g6d9K37vafVLhAk0XH5ZIH6meoj4oHpvglvd1iWIIxGn7WJuMb1uZ_s3KNQLTJBGZLIUpMpXDElJZM2Ddg6tdBiQDUudHTE5JpQpuzEbnY2VKhqdB_h8Aez-OAM:1wY5xw:X08sliScOvf8kTmUXWihlrOEfjb4_hQ9mbpSMyLZAuI",
+        "expire_date": "2026-06-26T17:46:48.427Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "gljl1l9g5px6mi0vfthl6s624qq124fc",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQAP9lz4bwWErp0bvfQLYLSNVAUtqT8d9Nkx70OjOZNwTatxL2ntawRJhAweWXzcTPVA8RH1TvTXCr27rM4kjEabu4tZhe17P9GxTqBSawmcacMGqdkdkZj2Ni6c3gvFXRKpKanWMkMsxaJlKZOQ9KSY9opYbPF-19N8I:1wOnKt:zcReiqgbGPx0l5Ie8yZ9AKq9FThNjlrcZ_LsRqtuNFM",
+        "expire_date": "2026-06-01T02:04:03.222Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "s2ytmaolzib7zksuv4lgstf8c971vx50",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQAP9lz4bwWErp0bvfQLYLSNVAUtqT8d9Nkx70OjOZNwTatxL2ntawRJhAweWXzcTPVA8RH1TvTXCr27rM4kjEabu4tZhe17P9GxTqBSawmcacMGqdkdkZj2Ni6c3gvFXRKpKanWMkMsxaJlKZOQ9KSY9opYbPF-19N8I:1wMZ4X:MH86btZ2ottf-Jt_m1zYaAesbXqMRQuaAEg70QzUQ9s",
+        "expire_date": "2026-05-25T22:25:57.493Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "x8x9cxebfh1mddlqcnetk6seaus0l1ha",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQAP9lz4bwWErp0bvfQLYLSNVAUtqT8d9Nkx70OjOZNwTatxL2ntawRJhAweWXzcTPVA8RH1TvTXCr27rM4kjEabu4tZhe17P9GxTqBSawmcacMGqdkdkZj2Ni6c3gvFXRKpKanWMkMsxaJlKZOQ9KSY9opYbPF-19N8I:1wYa88:sf9ckmh1zOh74DiZBsoAYKjfF30W3NUi8R9KmnWFkOk",
+        "expire_date": "2026-06-28T01:59:20.258Z"
+    }
+},
+{
+    "model": "sistema.telefono",
+    "pk": 9,
+    "fields": {
+        "marca": "SAMSUNG",
+        "modelo": "A56",
+        "precio": "400.00",
+        "stock": 9,
+        "imagen": "",
+        "estado": "Disponible"
+    }
+},
+{
+    "model": "sistema.telefono",
+    "pk": 10,
+    "fields": {
+        "marca": "Xiaomi",
+        "modelo": "Redmi note 13",
+        "precio": "250.00",
+        "stock": 3,
+        "imagen": "telefonos/redmi_note_13.jpg",
+        "estado": "Disponible"
+    }
+},
+{
+    "model": "sistema.cliente",
+    "pk": 2,
+    "fields": {
+        "nombre": "Melina",
+        "telefono": "85854119",
+        "email": "melinalopezmendez@gmail.com",
+        "direccion": ""
+    }
+},
+{
+    "model": "sistema.reparacion",
+    "pk": 1,
+    "fields": {
+        "cliente": 2,
+        "fecha": "2026-06-11T04:00:31.663Z",
+        "estado": "En proceso",
+        "marca": "Xiaomi",
+        "modelo": "Redmi Note 8",
+        "serie": "Unica",
+        "accesorios_recibidos": "funda rosada",
+        "defecto_cliente": "No enciende solo conectado",
+        "notas": "Telefono en buen estado",
+        "informacion_taller": "Compra hace tres aÃƒÂ±os",
+        "caracteristicas": "modelo pequeÃƒÂ±o sin golpes\r\n\r\n\r\n",
+        "razon_visita": "El cliente presenta quejas acerca del equipo por el proceso de encendido\r\n\r\n",
+        "observaciones": "Telefono en buen estado fisicamente pero la falla persiste\r\n\r\n\r\n",
+        "diagnostico": "BaterÃƒÂ­a colapsada por sobrecalentar el sistema\r\n\r\n\r\n",
+        "proceso_realizado": "ValoraciÃƒÂ³n y retiro de la capa \r\n\r\n\r\n",
+        "cotizacion_servicio": "ValoraciÃƒÂ³n y retiro de la capa \r\n\r\n\r\n",
+        "precio_cotizacion": "250.00",
+        "tecnico": [
+            "tecnico1"
+        ]
+    }
+},
+{
+    "model": "sistema.venta",
+    "pk": 3,
+    "fields": {
+        "cliente": 2,
+        "total": "60.00",
+        "fecha_venta": "2026-06-12",
+        "usuario": null
+    }
+},
+{
+    "model": "sistema.venta",
+    "pk": 4,
+    "fields": {
+        "cliente": 2,
+        "total": "400.00",
+        "fecha_venta": "2026-06-13",
+        "usuario": [
+            "vendedor1"
+        ]
+    }
+},
+{
+    "model": "sistema.detalleventa",
+    "pk": 1,
+    "fields": {
+        "venta": 3,
+        "producto": "Funda silicona Iphone",
+        "tipo_producto": "Accesorio",
+        "cantidad": 3,
+        "precio_unitario": "20.00",
+        "subtotal": "60.00"
+    }
+},
+{
+    "model": "sistema.detalleventa",
+    "pk": 2,
+    "fields": {
+        "venta": 4,
+        "producto": "SAMSUNG A56",
+        "tipo_producto": "Telefono",
+        "cantidad": 1,
+        "precio_unitario": "400.00",
+        "subtotal": "400.00"
+    }
+},
+{
+    "model": "sistema.accesorio",
+    "pk": 5,
+    "fields": {
+        "nombre": "Funda silicona Iphone",
+        "tipo": "Funda",
+        "precio": "20.00",
+        "stock": 6,
+        "imagen": ""
+    }
+}
+]

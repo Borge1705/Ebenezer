@@ -1,0 +1,84 @@
+{% extends 'sistema/base.html' %}
+
+{% block title %}Reportes{% endblock %}
+
+{% block content %}
+<div class="content-panel">
+
+  <div class="panel-header">
+    <h2>Reportes del sistema</h2>
+    <p style="font-size:13px; color:#64748B; margin:4px 0 0;">
+      Genera y descarga reportes ejecutivos en PDF o Excel con datos en tiempo real.
+    </p>
+  </div>
+
+  <div class="reportes-container">
+
+    <!-- GENERAL -->
+    <div class="reporte-card reporte-card--general">
+      <div class="reporte-card__top">
+        <div class="reporte-icon">📈</div>
+        <div>
+          <h3>Reporte general</h3>
+          <span class="badge badge--info">Ejecutivo</span>
+        </div>
+      </div>
+      <p>Resumen completo del sistema: ventas, ingresos, inventario y reparaciones con gráficos de tendencia.</p>
+      <div class="reporte-actions">
+        <a href="{% url 'reporte_general_pdf' %}" class="btn-reporte btn-reporte--full">
+          📄 Generar reporte general
+        </a>
+      </div>
+    </div>
+
+    <!-- VENTAS -->
+    <div class="reporte-card reporte-card--ventas">
+      <div class="reporte-card__top">
+        <div class="reporte-icon">💵</div>
+        <div>
+          <h3>Reporte de ventas</h3>
+          <span class="badge badge--muted">PDF · Excel</span>
+        </div>
+      </div>
+      <p>Historial de ventas, facturas generadas, productos vendidos e ingresos por período.</p>
+      <div class="reporte-actions">
+        <a href="{% url 'reporte_ventas_pdf' %}" class="btn-reporte btn-reporte--pdf">📄 PDF</a>
+        <a href="{% url 'reporte_ventas_excel' %}" class="btn-reporte btn-reporte--excel">📊 Excel</a>
+      </div>
+    </div>
+
+    <!-- INVENTARIO -->
+    <div class="reporte-card reporte-card--inventario">
+      <div class="reporte-card__top">
+        <div class="reporte-icon">📦</div>
+        <div>
+          <h3>Reporte de inventario</h3>
+          <span class="badge badge--muted">PDF · Excel</span>
+        </div>
+      </div>
+      <p>Productos disponibles, stock actual, alertas de stock bajo y productos agotados.</p>
+      <div class="reporte-actions">
+        <a href="{% url 'reporte_inventario_pdf' %}" class="btn-reporte btn-reporte--pdf">📄 PDF</a>
+        <a href="{% url 'reporte_inventario_excel' %}" class="btn-reporte btn-reporte--excel">📊 Excel</a>
+      </div>
+    </div>
+
+    <!-- REPARACIONES -->
+    <div class="reporte-card reporte-card--reparaciones">
+      <div class="reporte-card__top">
+        <div class="reporte-icon">🔧</div>
+        <div>
+          <h3>Reporte de reparaciones</h3>
+          <span class="badge badge--muted">PDF · Excel</span>
+        </div>
+      </div>
+      <p>Órdenes de trabajo, estados actuales, técnicos asignados y cotizaciones de servicio.</p>
+      <div class="reporte-actions">
+        <a href="{% url 'reporte_reparaciones_pdf' %}" class="btn-reporte btn-reporte--pdf">📄 PDF</a>
+        <a href="{% url 'reporte_reparaciones_excel' %}" class="btn-reporte btn-reporte--excel">📊 Excel</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

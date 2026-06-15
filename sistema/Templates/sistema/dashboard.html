@@ -1,0 +1,79 @@
+{% extends 'sistema/base.html' %}
+
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="content-panel">
+
+
+    <div class="panel-header">
+
+        <h2>
+            Bienvenido al Sistema EBENEZER
+        </h2>
+
+    </div>
+
+
+
+    <div class="dashboard-charts">
+
+
+
+        <div class="chart-card">
+
+
+            <h3>
+                Ventas
+            </h3>
+
+
+            <canvas 
+                id="ventasChart"
+                data-valor="{{ sales_today }}">
+            </canvas>
+
+
+        </div>
+
+
+
+
+        <div class="chart-card">
+
+
+            <h3>
+                Estado de Reparaciones
+            </h3>
+
+            <div style="height:230px">
+
+                <canvas 
+                    id="reparacionesChart"
+                    data-pendientes="{{ active_repairs }}"
+                    data-completadas="{{ completed_repairs }}"
+                    data-entregadas="{{ delivered_repairs }}">
+                </canvas>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}

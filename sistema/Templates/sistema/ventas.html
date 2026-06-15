@@ -1,0 +1,240 @@
+{% extends 'sistema/base.html' %}
+
+
+{% block title %}
+Ventas
+{% endblock %}
+
+
+{% block content %}
+
+<div class="content-panel ventas-panel">
+
+    <div class="panel-header">
+        <h2>🛒 Ventas</h2>
+    </div>
+
+    <div class="ventas-container">
+
+        <!-- ================= FORM ================= -->
+        <div class="venta-form">
+
+            <h2>➕ Nueva Venta</h2>
+
+            <form method="POST" id="formVenta">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label>👤 Cliente</label>
+                    <select name="cliente" required>
+                        {% for cliente in clientes %}
+                        <option value="{{cliente.id}}">👤 {{cliente.nombre}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>📦 Producto</label>
+
+                    <select id="productoSelect" onchange="actualizarPrecio()">
+
+                        <option value="">Seleccione producto</option>
+
+                        {% for telefono in telefonos %}
+                        <option
+                            value="tel_{{telefono.id}}"
+                            data-nombre="📱 {{telefono.marca}} {{telefono.modelo}}"
+                            data-precio="{{telefono.precio}}"
+                            data-stock="{{telefono.stock}}">
+                            📱 {{telefono.marca}} {{telefono.modelo}} (Stock: {{telefono.stock}})
+                        </option>
+                        {% endfor %}
+
+                        {% for accesorio in accesorios %}
+                        <option
+                            value="acc_{{accesorio.id}}"
+                            data-nombre="🎧 {{accesorio.nombre}}"
+                            data-precio="{{accesorio.precio}}"
+                            data-stock="{{accesorio.stock}}">
+                            🎧 {{accesorio.nombre}} (Stock: {{accesorio.stock}})
+                        </option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>🔢 Cantidad</label>
+                    <input type="number" id="cantidadProducto" value="1" min="1">
+                </div>
+
+                <div class="form-group">
+                    <label>💲 Precio</label>
+                    <input type="number" id="precioProducto" readonly>
+                </div>
+
+                <button type="button" class="btn-add" onclick="agregarProductoFactura()">
+                    ➕ Agregar producto
+                </button>
+
+                <div id="inputsVenta"></div>
+
+            </form>
+        </div>
+
+        <!-- ================= FACTURA MODERNA ================= -->
+        <div class="factura">
+
+            <div class="factura-header">
+                <h2>🧾 Factura de Venta</h2>
+                <p class="factura-sub">Resumen de productos agregados</p>
+            </div>
+
+            <table class="tabla-factura">
+
+                <thead>
+                    <tr>
+                        <th>📦 Producto</th>
+                        <th>🔢 Cant.</th>
+                        <th>💰 Subtotal</th>
+                        <th>❌</th>
+                    </tr>
+                </thead>
+
+                <tbody id="detalleFactura">
+                    <tr>
+                        <td colspan="4" class="empty-factura">
+                            No hay productos agregados
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+            <div class="factura-total">
+                <span>💰 Total:</span>
+                <strong>$<span id="totalVenta">0</span></strong>
+            </div>
+
+            <button class="btn-save-modern" onclick="guardarVenta()">
+                💾 Finalizar Venta
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= HISTORIAL ================= -->
+    <div class="table-wrapper">
+
+        <table class="tabla-modern">
+
+            <thead>
+                <tr>
+                    <th>🆔 Venta</th>
+                    <th>👤 Cliente</th>
+                    <th>💰 Total</th>
+                    <th>📅 Fecha</th>
+                    <th>⚙️ Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for venta in ventas %}
+
+                <tr>
+
+                    <td>#{{venta.id}}</td>
+                    <td>{{venta.cliente.nombre}}</td>
+                    <td>${{venta.total}}</td>
+                    <td>{{venta.fecha_venta}}</td>
+
+                    <td class="action-buttons">
+
+                        <button class="btn-view" onclick="abrirFactura('{{venta.id}}')">
+                            👁 Ver
+                        </button>
+
+                        <a href="{% url 'eliminar_venta' venta.id %}">
+                            <button class="btn-delete-soft">
+                                🗑 Eliminar
+                            </button>
+                        </a>
+
+                    </td>
+
+                </tr>
+
+                {% empty %}
+
+                <tr>
+                    <td colspan="5" class="empty-state">
+                        No hay ventas registradas
+                    </td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<!-- ================= MODALES FACTURA ================= -->
+{% for venta in ventas %}
+
+<div id="factura{{venta.id}}" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="cerrarFactura('{{venta.id}}')">&times;</span>
+
+        <div class="factura-modal-header">
+            <h2>🧾 Factura #{{venta.id}}</h2>
+            <p>👤 Cliente: <strong>{{venta.cliente.nombre}}</strong></p>
+        </div>
+
+        <table class="tabla-factura">
+
+            <thead>
+                <tr>
+                    <th>📦 Producto</th>
+                    <th>🔢 Cant.</th>
+                    <th>💲 Precio</th>
+                    <th>💰 Subtotal</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for detalle in venta.detalles.all %}
+
+                <tr>
+                    <td>{{detalle.producto}}</td>
+                    <td>{{detalle.cantidad}}</td>
+                    <td>${{detalle.precio_unitario}}</td>
+                    <td>${{detalle.subtotal}}</td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+        <div class="factura-total-modal">
+            💰 Total: <strong>${{venta.total}}</strong>
+        </div>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+
+{% endblock %}
